@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [[ "$1" == "--init"  || "$1" == "-i" ]]; then
+  git clone <name>
+  repo_name=$(basename <name> .git)
+  repo_path=$(pwd)/${repo_name}
+  echo "export PATH=\$PATH:${repo_path}" >> ~/.bashrc
+  source ~/.bashrc
+
+  echo "Udało się"
+
+fi
